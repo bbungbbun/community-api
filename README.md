@@ -9,7 +9,7 @@
 - dotenv, cors
 
 ## 목록
-- 전체 조회 `/getBoard`
+- 전체 조회 `/getAll`
 - 해당 글 조회 `/getBoard`
 - 글 작성 `/write`
 - 글 수정 `/modify`

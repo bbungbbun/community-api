@@ -3,6 +3,11 @@ const app = express();
 const port = 3010;
 const mysql = require('mysql');
 const dotenv = require("dotenv");
+const multer  = require('multer');
+const upload = multer({ dest: 'uploads/' })
+const fs = require("fs");
+
+
 dotenv.config();
 
 const cors = require('cors');
@@ -11,7 +16,7 @@ app.use(cors ({
   credentials: true
 }));
 
-const router = express.Router();
+// const router = express.Router();
 
 // bodyParser
 const bodyParser = require('body-parser');
@@ -63,6 +68,19 @@ app.post('/write', (req, res) => {
     if (err) throw new Error(err);
     res.send({ message: 'success' });
   });
+});
+
+/**
+ * @description 사진 업로드
+ * */
+
+app.get('/upload', function(req, res){
+  res.send(req.body);
+});
+
+app.post('/upload', upload.single('userfile'), function(req, res){
+  res.send('Uploaded! : '+req.file); // object를 리턴함
+  console.log(req.file); // 콘솔(터미널)을 통해서 req.file Object 내용 확인 가능.
 });
 
 
