@@ -7,10 +7,13 @@
 - mySql
 - express
 - dotenv, cors
+- multer
 
 ## 목록
-- 전체 조회 `/getAll`
-- 해당 글 조회 `/getBoard`
-- 글 작성 `/write`
-- 글 수정 `/modify`
-- 글 삭제 `/delete`
+- 전체 조회 `GET` `/getAll`
+- 해당 글 조회 `GET` `/getBoard`
+- 글 작성 `POST` `/write`
+- 글 수정 `PATCH` `/modify`
+- 글 삭제 `DELETE` `/delete`
+- 사진 업로드 테스트 페이지 불러오기 `GET` `/upload` 
+- 사진 업로드 `POST` `/upload`
